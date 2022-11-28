@@ -1,0 +1,14 @@
+.popup__field-top {
+  margin: 0;
+  padding-top: 54px;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16.94px;
+}
+
+@media screen and (max-width: 600px) {
+  .popup__field-top {
+    padding-top: 75px;
+  }
+}

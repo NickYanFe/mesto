@@ -1,0 +1,10 @@
+.profile__info {
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 336px;
+  margin-left: 45px;
+  margin-top: 22px;
+  align-items: baseline;
+}
