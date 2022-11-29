@@ -11,16 +11,17 @@
 
 @media screen and (max-width: 968px) {
   .elements {
-    max-width: 80%;
+    max-width: 85%;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 1fr);
   }
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 755px) {
   .elements {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    padding-top: 36px;
   }
 }

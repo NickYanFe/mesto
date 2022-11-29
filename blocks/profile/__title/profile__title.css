@@ -4,11 +4,15 @@
   font-weight: 500;
   line-height: 48px;
   margin-bottom: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  align-items: baseline;
 }
 
 @media screen and (max-width: 900px) {
   .profile__title {
-    font-size: 32px;
+    font-size: 27px;
     font-weight: 500;
     line-height: 37px;
   }
@@ -16,8 +20,6 @@
 
 @media screen and (max-width: 320px) {
   .profile__title {
-    font-size: 27px;
-    font-weight: 500;
     line-height: 32.68px;
   }
 }

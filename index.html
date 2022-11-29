@@ -26,10 +26,12 @@
               class="profile__logo"
             />
 
-            <div class="profile__info">
-              <h1 class="profile__title">Жак-Ив Кусто</h1>
+            <div class="profile__edit">
+              <div class="profile__info">
+                <h1 class="profile__title">Жак-Ив Кусто</h1>
+                <p class="profile__subtitle">Исследователь океана</p>
+              </div>
               <button class="profile__edit-button"></button>
-              <p class="profile__subtitle">Исследователь океана</p>
             </div>
           </div>
           <button class="profile__add-button"></button>
@@ -38,66 +40,66 @@
           <li class="element">
             <img
               class="element__image"
-              src="./images/elements/dombai.jpg"
-              alt=" Домбай."
+              src="./images/elements/andorra.jpg"
+              alt=" Андорра."
             />
             <article class="element__description">
-              <h2 class="element__title">Карачаевск</h2>
+              <h2 class="element__title">Андорра</h2>
               <button class="element__like-button"></button>
             </article>
           </li>
           <li class="element">
             <img
               class="element__image"
-              src="./images/elements/dombai.jpg"
-              alt=" Домбай."
+              src="./images/elements/ecuador.jpg"
+              alt=" Эквадор."
             />
             <article class="element__description">
-              <h2 class="element__title">Карачаевск</h2>
+              <h2 class="element__title">Эквадор</h2>
               <button class="element__like-button"></button>
             </article>
           </li>
           <li class="element">
             <img
               class="element__image"
-              src="./images/elements/dombai.jpg"
-              alt=" Домбай."
+              src="./images/elements/faroe_islands.jpg"
+              alt=" Фарерские острова."
             />
             <article class="element__description">
-              <h2 class="element__title">Карачаевск</h2>
+              <h2 class="element__title">Фарерские острова</h2>
               <button class="element__like-button"></button>
             </article>
           </li>
           <li class="element">
             <img
               class="element__image"
-              src="./images/elements/dombai.jpg"
-              alt=" Домбай."
+              src="./images/elements/morocco.jpg"
+              alt=" Морокко."
             />
             <article class="element__description">
-              <h2 class="element__title">Карачаевск</h2>
+              <h2 class="element__title">Морокко</h2>
               <button class="element__like-button"></button>
             </article>
           </li>
           <li class="element">
             <img
               class="element__image"
-              src="./images/elements/dombai.jpg"
-              alt=" Домбай."
+              src="./images/elements/morocco_2.jpg"
+              alt=" Морокко, закат."
             />
             <article class="element__description">
-              <h2 class="element__title">Карачаевск</h2>
+              <h2 class="element__title">Морокко</h2>
               <button class="element__like-button"></button>
             </article>
           </li>
           <li class="element">
             <img
               class="element__image"
-              src="./images/elements/dombai.jpg"
-              alt=" Домбай."
+              src="./images/elements/praha.jpg"
+              alt=" Прага."
             />
             <article class="element__description">
-              <h2 class="element__title">Карачаевск</h2>
+              <h2 class="element__title">Прага</h2>
               <button class="element__like-button"></button>
             </article>
           </li>
@@ -107,15 +109,23 @@
         <p class="footer__copyright">&#169;2020 Mesto Russia</p>
       </footer>
       <div class="popup">
-        <button class="popup__close-button"></button>
-        <h2 class="popup__header">Редактировать профиль</h2>
-        <form class="popup__field-top">Жак-Ив Кусто</form>
-        <div class="popup__line"></div>
-        <form class="popup__field-bottom">Исследователь океана</form>
-        <div class="popup__line"></div>
-        <button class="popup__save-button">Сохранить</button>
+        <div class="popup__overlay"></div>
+        <div class="popup__container">
+          <button class="popup__close-button"></button>
+          <h2 class="popup__header">Редактировать профиль</h2>
+          <input type="text" class="popup__field-top" placeholder="Имя" />
+          <div class="popup__line"></div>
+          <input
+            type="text"
+            class="popup__field-bottom"
+            placeholder="Профессия"
+          />
+          <!-- <form class="popup__field-bottom">Исследователь океана</form> -->
+          <div class="popup__line"></div>
+          <button class="popup__save-button">Сохранить</button>
+        </div>
       </div>
     </div>
-    <script></script>
+    <script src="./scripts/index.js"></script>
   </body>
 </html>
