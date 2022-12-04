@@ -1,12 +1,10 @@
 .elements {
-    margin: 0 auto;
-    max-width: 880px;
-    }
-  
-  @media screen and (max-width: 968px) {
-    .elements__grid {
-      max-width: 85%;
-       }
+  margin: 0 auto;
+  max-width: 880px;
+}
+
+@media screen and (max-width: 968px) {
+  .elements__grid {
+    max-width: 85%;
   }
-  
- 
+}
