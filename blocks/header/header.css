@@ -3,7 +3,7 @@
   margin: 0 auto;
   margin-top: 45px;
   min-height: 74px;
-  border-bottom: 1px solid #545454;
+  border-bottom: 1px solid rgb(84,84,84, 1);
 }
 
 @media screen and (max-width: 968px) {
@@ -16,8 +16,6 @@
 
 @media screen and (max-width: 320px) {
   .header {
-    margin-top: 28px;
-    min-height: 56px;
     max-width: 320px;
   }
 }
