@@ -2,8 +2,8 @@ const popupButton = document.querySelector('.profile__edit-button');
 const popup = document.querySelector(".popup");
 const popupCloseButton = document.querySelector('.popup__close-button');
 
-let popupName = document.querySelector('.popup__field_top');
-let popupTitle = document.querySelector('.popup__field_bottom');
+let popupName = document.querySelector('.popup__form_input_type_name');
+let popupTitle = document.querySelector('.popup__form_input_type_job');
 
 let profileName = document.querySelector('.profile__title');
 let profileTitle = document.querySelector('.profile__subtitle');
@@ -15,12 +15,10 @@ function popupOpen(event) {
   popupName.value = profileName.textContent;
   popupTitle.value = profileTitle.textContent;
 }
-popupButton.addEventListener('click', popupOpen);
 
 function closePopup(event) {
   popup.classList.remove('popup_opened');
 }
-popupCloseButton.addEventListener('click', closePopup);
 
 // Закрашивание кнопки лайк по клику
 
@@ -53,4 +51,7 @@ function handleFormSubmit(evt) {
 
 // Прикрепляем обработчик к форме:
 // он будет следить за событием “submit” - «отправка»
+popupButton.addEventListener('click', popupOpen);
+popupCloseButton.addEventListener('click', closePopup);
+
 formElement.addEventListener('submit', handleFormSubmit);

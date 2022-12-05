@@ -26,7 +26,7 @@
               class="profile__logo"
             />
 
-            <div class="profile__edit">
+            <div class="profile__edit" aria-label="закрыть">
               <div class="profile__info">
                 <h1 class="profile__title">Жак-Ив Кусто</h1>
                 <p class="profile__subtitle">Исследователь океана</p>
@@ -57,7 +57,7 @@
               />
               <div class="element__description">
                 <h2 class="element__title">Эквадор</h2>
-                <button class="element__like-button"></button>
+                <button type="button" class="element__like-button"></button>
               </div>
             </li>
             <li class="element">
@@ -68,7 +68,7 @@
               />
               <div class="element__description">
                 <h2 class="element__title">Фарерские острова</h2>
-                <button class="element__like-button"></button>
+                <button type="button" class="element__like-button"></button>
               </div>
             </li>
             <li class="element">
@@ -79,7 +79,7 @@
               />
               <div class="element__description">
                 <h2 class="element__title">Морокко</h2>
-                <button class="element__like-button"></button>
+                <button type="button" class="element__like-button"></button>
               </div>
             </li>
             <li class="element">
@@ -90,7 +90,7 @@
               />
               <div class="element__description">
                 <h2 class="element__title">Морокко</h2>
-                <button class="element__like-button"></button>
+                <button type="button" class="element__like-button"></button>
               </div>
             </li>
             <li class="element">
@@ -101,7 +101,7 @@
               />
               <div class="element__description">
                 <h2 class="element__title">Прага</h2>
-                <button class="element__like-button"></button>
+                <button type="button" class="element__like-button"></button>
               </div>
             </li>
           </ul>
@@ -112,19 +112,23 @@
       </footer>
       <div class="popup">
         <div class="popup__container">
-          <button type="reset" class="popup__close-button"></button>
+          <button
+            type="button"
+            class="popup__close-button"
+            aria-label="закрыть"
+          ></button>
           <h2 class="popup__header">Редактировать профиль</h2>
-          <form class="popup__form" name="popup__form">
+          <form class="popup__form" name="profile__menu">
             <input
               name="name"
               type="text"
-              class="popup__field popup__field_top"
+              class="popup__field popup__form_input_type_name"
               placeholder="Имя"
             />
             <input
               name="hobby"
               type="text"
-              class="popup__field popup__field_bottom"
+              class="popup__field popup__form_input_type_job"
               placeholder="Профессия"
             />
             <button
