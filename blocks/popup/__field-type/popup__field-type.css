@@ -1,4 +1,4 @@
-.popup__field {
+.popup__field-type {
   display: flex;
   max-width: 358px;
   width: 100%;
@@ -14,12 +14,12 @@
   padding-bottom: 10px;
 }
 
-.popup__field:last-of-type {
+.popup__field-type:last-of-type {
   margin-top: 28px;
 }
 
 @media screen and (max-width: 600px) {
-  .popup__field {
+  .popup__field-type {
     margin-top: 75px;
     max-width: 238px;
   }
