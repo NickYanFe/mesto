@@ -6,4 +6,5 @@
   display: block;
   box-sizing: border-box;
   object-fit: cover;
+  z-index: 0;
 }
