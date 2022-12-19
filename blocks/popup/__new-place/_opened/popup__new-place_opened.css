@@ -1,6 +1,5 @@
 .popup__new-place_opened {
-    visibility: visible;
-    opacity: 1;
-    transition: opacity 0.5s ease-out;
-  }
-  
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
