@@ -27,17 +27,10 @@ const initialCards = [
   
   const elementContainer = document.querySelector('.elements__grid') //ul куда записываем li элементы
   
-  
-  
-  // const elementPopupButton = document.querySelector('.popup__fp-button') //кнопка открытия попапа картинки на весь экран
-  
-  
-  
-  
   const defaultElement = initialCards.map(function (item) {
     return {
-      name: item.name,
-      link: item.link,
+     name: item.name,
+     link: item.link,
     };
   });
   
@@ -49,6 +42,7 @@ const initialCards = [
   const elementLikeButton = elementItem.querySelector('.element__like-button')
   const elementImage = elementItem.querySelector('.element__image')
   const elementTitle = elementItem.querySelector('.element__title')
+  const fullPicButton = elementItem.querySelector('.popup__fp-button')
   
   elementImage.src = elLink;
   elementImage.alt = elName;
@@ -57,8 +51,8 @@ const initialCards = [
   
   // Закрашивание кнопки лайк по клику
   
-    elementLikeButton.addEventListener('click', function (evt) {
-  evt.target.classList.toggle('element__like-button_active')
+  elementLikeButton.addEventListener('click', function (evt) {
+    evt.target.classList.toggle('element__like-button_active')
   
     })
   
@@ -68,7 +62,16 @@ const initialCards = [
     elementItem.remove()
     })
    
+  // Попап картинка на весь экран
+
+  fullPicButton.addEventListener('click', () =>{
   
+   popupFullPic.src = elLink
+   popupFigcaption.textContent = elName
+   
+  openPopup(popupImg) 
+ 
+  })
   
   return elementItem;
   
@@ -82,12 +85,12 @@ const initialCards = [
    }
 
    defaultElement.forEach((item) => {
-    addElement(createElement(item.link, item.name));
+   addElement(createElement(item.link, item.name));
   });
 
-  elementContainer.append(...initialCards.map(newElement))
+  elementContainer(...initialCards.map(newElement))
   
-  //  renderTodo(elements)
+
 
 
   
