@@ -54,9 +54,9 @@ formElement.addEventListener('submit', handleFormSubmit);
 
 // Второй попап - места
 
-const popupNewPlace = document.querySelector('.popup__new-place')
+const popupNewPlace = document.querySelector('.popup-new-place')
 const newPlaceButton = document.querySelector('.profile__add-button')
-const popupElementForm = document.querySelector('.popup__new-place-form')
+const popupElementForm = document.querySelector('.popup-new-place__form')
 const popupPlace = document.querySelector('.popup__input_type_place');
 const popupLink = document.querySelector('.popup__input_type_link');
 
