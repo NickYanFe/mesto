@@ -25,13 +25,15 @@ const initialCards = [
      }
    ]; 
   
-  const elementContainer = document.querySelector('.elements__grid') //ul куда записываем li элементы
+  const elementContainer = document.querySelector('.elements__grid') //ul
   
   
   
-  // const elementPopupButton = document.querySelector('.popup__fp-button') //кнопка открытия попапа картинки на весь экран
-  
-  
+  const elementPopupButton = document.querySelector('.popup__fp-button')
+  const elementImage = document.querySelector('.element__image')
+  const elementTitle = document.querySelector('.element__title')
+  const elementDeleteButton = document.querySelector('.element__delete-button')
+  const elementLikeButton = document.querySelector('.element__like-button')
   
   
   const defaultElement = initialCards.map(function (item) {
@@ -42,18 +44,18 @@ const initialCards = [
   });
   
   const createElement = (elLink, elName) => {
-  
-  const elementTemplate = document.querySelector('#elements-list');
+  const elementTemplate = document.querySelector('#elements-list').content;
   const elementItem = elementTemplate.content.querySelector('.element').cloneNode(true);
-  const elementDeleteButton = elementItem.querySelector('.element__delete-button')
-  const elementLikeButton = elementItem.querySelector('.element__like-button')
-  const elementImage = elementItem.querySelector('.element__image')
-  const elementTitle = elementItem.querySelector('.element__title')
   
   elementImage.src = elLink;
   elementImage.alt = elName;
   elementTitle.textContent = elName;
   
+  
+  
+  // elementDeleteButton.addEventListener('click', () => {
+  //   elementItem.remove();
+  // });
   
   // Закрашивание кнопки лайк по клику
   
@@ -64,32 +66,23 @@ const initialCards = [
   
   // Удаление карточки
   
-  elementDeleteButton.addEventListener('click', () => {
-    elementItem.remove()
-    })
-   
+  //  elementDeleteButton.addEventListener('click', () => {
+  //   elementItem.remove()
+  //  })
+  
   
   
   return elementItem;
   
   }
-
+  console.log(elementItem)
   
-  // Добавление нового элемента
-
-   const addElement = (newElement) => {
-   elementContainer.prepend(newElement)
-   }
-
-   defaultElement.forEach((item) => {
-    addElement(createElement(item.link, item.name));
-  });
-
-  elementContainer.append(...initialCards.map(newElement))
+  // const renderTodo = (elements) => {
+  // elementContainer.prepend(createElement(elementName))
+  // }
+  // elementContainer.append(...initialCards.map(createElement))
   
-  //  renderTodo(elements)
-
-
+  // renderTodo(elements)
   
   
   
