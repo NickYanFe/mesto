@@ -6,6 +6,8 @@
     <meta name="description" content="Практическая работа #4" />
     <meta name="author" content="Николай Титков" />
     <link rel="stylesheet" href="./pages/index.css" />
+    <script src="./scripts/elements.js" defer></script>
+    <script src="./scripts/popups.js" defer></script>
     <title>Mesto. Russia</title>
   </head>
   <body class="page">
@@ -31,104 +33,21 @@
                 <h1 class="profile__title">Жак-Ив Кусто</h1>
                 <p class="profile__subtitle">Исследователь океана</p>
               </div>
-              <button type="button" class="profile__edit-button"></button>
+              <button
+                type="button"
+                class="profile__edit-button"
+                aria-label="Редактирование"
+              ></button>
             </div>
           </div>
-          <button type="button" class="profile__add-button"></button>
+          <button
+            type="button"
+            class="profile__add-button"
+            aria-label="Добавление"
+          ></button>
         </section>
         <section class="elements">
           <ul class="elements__grid"></ul>
-
-          <!-- <ul class="elements__grid">
-            <li class="element">
-              <button type="button" class="popup__fp-button">
-                <img
-                  class="element__image"
-                  src="./images/elements/andorra.jpg"
-                  alt=" Андорра."
-                />
-              </button>
-
-              <button type="button" class="element__delete-button"></button>
-              <div class="element__description">
-                <h2 class="element__title">Андорра</h2>
-                <button type="button" class="element__like-button"></button>
-              </div>
-            </li>
-            <li class="element">
-              <button type="button" class="popup__fp-button">
-              <img
-                class="element__image"
-                src="./images/elements/ecuador.jpg"
-                alt=" Эквадор."
-              />
-              </button>
-              <button type="button" class="element__delete-button"></button>
-              <div class="element__description">
-                <h2 class="element__title">Эквадор</h2>
-                <button
-                  type="button"
-                  class="element__like-button element__like-button"
-                ></button>
-              </div>
-            </li>
-            <li class="element">
-              <button type="button" class="popup__fp-button">
-              <img
-                class="element__image"
-                src="./images/elements/faroe_islands.jpg"
-                alt=" Фарерские острова."
-              />
-              </button>
-              <button type="button" class="element__delete-button"></button>
-              <div class="element__description">
-                <h2 class="element__title">Фарерские острова</h2>
-                <button type="button" class="element__like-button"></button>
-              </div>
-            </li>
-            <li class="element">
-              <button type="button" class="popup__fp-button">
-              <img
-                class="element__image"
-                src="./images/elements/morocco.jpg"
-                alt=" Морокко."
-              />
-              </button>
-              <button type="button" class="element__delete-button"></button>
-              <div class="element__description">
-                <h2 class="element__title">Морокко</h2>
-                <button type="button" class="element__like-button"></button>
-              </div>
-            </li>
-            <li class="element">
-              <button type="button" class="popup__fp-button">
-              <img
-                class="element__image"
-                src="./images/elements/morocco_2.jpg"
-                alt=" Морокко, закат."
-              />
-              </button>
-              <button type="button" class="element__delete-button"></button>
-              <div class="element__description">
-                <h2 class="element__title">Морокко</h2>
-                <button type="button" class="element__like-button"></button>
-              </div>
-            </li>
-            <li class="element">
-              <button type="button" class="popup__fp-button">
-              <img
-                class="element__image"
-                src="./images/elements/praha.jpg"
-                alt=" Прага."
-              />
-              </button>
-              <button type="button" class="element__delete-button"></button>
-              <div class="element__description">
-                <h2 class="element__title">Прага</h2>
-                <button type="button" class="element__like-button"></button>
-              </div>
-            </li>
-          </ul>  -->
         </section>
       </main>
       <footer class="footer">
@@ -137,7 +56,7 @@
 
       <!-- Попап редактирования профиля -->
 
-      <div class="popup popup_profile">
+      <div class="popup popup-profile">
         <div class="popup__container">
           <button
             type="button"
@@ -162,6 +81,7 @@
               name="submit__button"
               type="submit"
               class="popup__save-button"
+              aria-label="Сохранить"
             >
               Сохранить
             </button>
@@ -185,17 +105,20 @@
               type="text"
               class="popup__input popup__input_type_place"
               placeholder="Название"
+              required
             />
             <input
-              name="hobby"
-              type="text"
+              name="link"
+              type="url"
               class="popup__input popup__input_type_link"
               placeholder="Ссылка на картинку"
+              required
             />
             <button
               name="submit__button"
               type="submit"
               class="popup__save-button"
+              aria-label="Создать"
             >
               Создать
             </button>
@@ -224,18 +147,23 @@
 
     <template id="elements-list">
       <li class="element">
-        <button type="button" class="popup__fp-button">
+        <button type="button" class="popup__fp-button" aria-label="Открыть">
           <img class="element__image" src="#" alt=" " />
         </button>
-        <button type="button" class="element__delete-button"></button>
+        <button
+          type="button"
+          class="element__delete-button"
+          aria-label="Удалить"
+        ></button>
         <div class="element__description">
           <h2 class="element__title"></h2>
-          <button type="button" class="element__like-button"></button>
+          <button
+            type="button"
+            class="element__like-button"
+            aria-label="Лайк"
+          ></button>
         </div>
       </li>
     </template>
-
-    <script src="./scripts/elements.js"></script>
-    <script src="./scripts/popups.js"></script>
   </body>
 </html>
