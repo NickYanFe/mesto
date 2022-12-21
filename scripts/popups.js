@@ -1,12 +1,12 @@
 const popupProfileOpenButton = document.querySelector('.profile__edit-button');
 
 const popupProfile = document.querySelector('.popup-profile');
-const formElement = popupProfile.querySelector('.popup__form');
+const popupProfileFormElement = popupProfile.querySelector('.popup__form');
 
-const popupProfileNameInput = formElement.querySelector(
+const popupProfileNameInput = popupProfileFormElement.querySelector(
   '.popup__input_type_name'
 );
-const popupProfileTitleInput = formElement.querySelector(
+const popupProfileTitleInput = popupProfileFormElement.querySelector(
   '.popup__input_type_job'
 );
 
@@ -16,7 +16,7 @@ const profileTitle = document.querySelector('.profile__subtitle');
 // Функция открытия всех попапов
 
 function openPopup(item) {
-  item.classList.add('popup_opened'); //добавляем всем попапам класс popup_opened
+  item.classList.add('popup_opened'); //добавляем переданному попапу класс popup_opened
 }
 
 // Функция закрытия всех попапов
@@ -54,13 +54,13 @@ function submitPopupProfileForm(evt) {
 }
 
 popupProfileOpenButton.addEventListener('click', openProfilePopup);
-formElement.addEventListener('submit', submitPopupProfileForm);
+popupProfileFormElement.addEventListener('submit', submitPopupProfileForm);
 
 // Второй попап - места
 
 const popupNewPlace = document.querySelector('.popup-new-place');
 const newPlaceButton = document.querySelector('.profile__add-button');
-const popupElementForm = document.querySelector('.popup-new-place__form');
+const popupNewPlaceForm = document.querySelector('.popup-new-place__form');
 const popupPlaceNameInput = document.querySelector('.popup__input_type_place');
 const popupPlaceLinkInput = document.querySelector('.popup__input_type_link');
 
@@ -81,4 +81,4 @@ function addNewElement(evt) {
 }
 
 newPlaceButton.addEventListener('click', openNewPlacePopup);
-popupElementForm.addEventListener('submit', addNewElement);
+popupNewPlaceForm.addEventListener('submit', addNewElement);

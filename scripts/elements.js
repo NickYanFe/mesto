@@ -89,6 +89,7 @@ const addElement = (newElement) => {
   elementContainer.prepend(newElement);
 };
 
-defaultElement.forEach((item) => {
+initialCards.forEach((item) => {
   addElement(createElement(item.link, item.name));
+
 });
