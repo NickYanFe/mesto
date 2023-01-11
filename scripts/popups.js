@@ -17,11 +17,15 @@ const profileTitle = document.querySelector('.profile__subtitle');
 
 function openPopup(item) {
   item.classList.add('popup_opened'); //добавляем переданному попапу класс popup_opened
+  document.addEventListener('keydown', closePopupEscapeButton)
+
 }
 
 // Функция закрытия всех попапов
 function closePopup(item) {
   item.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closePopupEscapeButton)
+
 }
 
 const popupCloseButtons = document.querySelectorAll('.popup__close-button');
@@ -31,9 +35,33 @@ const popupCloseButtons = document.querySelectorAll('.popup__close-button');
 popupCloseButtons.forEach((xbutton) =>
   xbutton.addEventListener('click', () => {
     const popupXButton = xbutton.closest('.popup');
-    closePopup(popupXButton);
+      closePopup(popupXButton);
   })
 );
+
+// Закрытие попапа нажатием на Escape
+
+function closePopupEscapeButton (evt) {
+  if (evt.key === 'Escape') {
+    const popupOpened = document.querySelector('.popup_opened');
+    closePopup(popupOpened);
+    };
+};
+
+// Закрытие попапа нажатием на background
+
+const popupBackground = document.querySelectorAll('.popup');
+
+popupBackground.forEach((popup) => {
+popup.addEventListener('mousedown', (evt) => {
+ if (evt.target.classList.contains('popup_opened')) {
+  closePopup(popup);
+   }
+ if (evt.target.classList.contains('popup__close-button')) {
+  closePopup(popup);
+    }
+})
+})
 
 // Первый попап - Имя/занятия
 
@@ -65,9 +93,10 @@ const popupPlaceNameInput = document.querySelector('.popup__input_type_place');
 const popupPlaceLinkInput = document.querySelector('.popup__input_type_link');
 
 function openNewPlacePopup(event) {
+  
   openPopup(popupNewPlace);
+  popupNewPlaceForm.reset();
 
-  popupElementForm.reset();
 }
 
 function addNewElement(evt) {

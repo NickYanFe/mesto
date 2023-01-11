@@ -1,3 +1,5 @@
+// Задаем начальный мессив карточек (при открытии сайта)
+
 const initialCards = [
   {
     name: 'Архыз',
@@ -93,3 +95,5 @@ initialCards.forEach((item) => {
   addElement(createElement(item.link, item.name));
 
 });
+
+
