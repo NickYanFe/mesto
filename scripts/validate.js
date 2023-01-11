@@ -15,7 +15,7 @@ function showInputError(formElement, inputElement, config) {
   errorElement.textContent = inputElement.validationMessage;
 }
 
-// удаляем класс с ошибкой, очищаем поля (????)
+// удаляем класс с ошибкой, очищаем поля 
 
 function hideInputError(formElement, inputElement, config) {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
