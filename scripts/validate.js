@@ -15,7 +15,7 @@ function showInputError(formElement, inputElement, config) {
   errorElement.textContent = inputElement.validationMessage;
 }
 
-// удаляем класс с ошибкой, очищаем поля 
+// удаляем класс с ошибкой, очищаем поля
 
 function hideInputError(formElement, inputElement, config) {
   const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
@@ -33,19 +33,6 @@ function checkInputValidity(formElement, inputElement, config) {
     showInputError(formElement, inputElement, config);
   }
 }
-
-// Добавляем слушатели на поля ввода
-function setEventListeners(formElement, config) {
-  const inputList = Array.from(
-    formElement.querySelectorAll(config.inputSelector)
-  );
-  inputList.forEach((inputElement) => {
-    inputElement.addEventListener("input", () => {
-      checkInputValidity(formElement, inputElement, config);
-    });
-  });
-}
-
 // Проверяем валидность всех форм
 
 function enableValidation(config) {
@@ -88,6 +75,16 @@ function setEventListeners(formElement, config) {
   );
   const buttonElement = formElement.querySelector(config.submitButtonSelector);
 
+  // деактивируем кнопку при 1й загрузке сайта
+  toggleButtonState(inputList, buttonElement, config);
+
+  formElement.addEventListener("reset", () => {
+    // `setTimeout` нужен для того, чтобы дождаться очищения формы (вызов уйдет в конце стэка) и только потом вызвать `toggleButtonState`
+    setTimeout(() => {
+      toggleButtonState(inputList, buttonElement, config);
+    }, 0); // достаточно указать 0 миллисекунд, чтобы после `reset` уже сработало действие
+  });
+
   inputList.forEach((inputElement) => {
     inputElement.addEventListener("input", () => {
       checkInputValidity(formElement, inputElement, config);
@@ -96,4 +93,5 @@ function setEventListeners(formElement, config) {
     });
   });
 }
+
 enableValidation(validationConfig);

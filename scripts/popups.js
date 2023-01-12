@@ -1,8 +1,8 @@
+// Константы попапа профиля
+
 const popupProfileOpenButton = document.querySelector(".profile__edit-button");
-
 const popupProfile = document.querySelector(".popup-profile");
-const popupProfileFormElement = popupProfile.querySelector(".popup__form");
-
+const popupProfileFormElement = document.forms["profile-form"]; // Находим по "name" среди форм, а не по всему документу
 const popupProfileNameInput = popupProfileFormElement.querySelector(
   ".popup__input_type_name"
 );
@@ -12,6 +12,22 @@ const popupProfileTitleInput = popupProfileFormElement.querySelector(
 
 const profileName = document.querySelector(".profile__title");
 const profileTitle = document.querySelector(".profile__subtitle");
+
+// Константы попапа "Новое место"
+
+const popupNewPlace = document.querySelector(".popup-new-place");
+const newPlaceButton = document.querySelector(".profile__add-button");
+const popupNewPlaceForm = document.forms["place-form"]; // Находим по "name" среди форм, а не по всему документу
+const popupPlaceNameInput = document.querySelector(".popup__input_type_place");
+const popupPlaceLinkInput = document.querySelector(".popup__input_type_link");
+const inputFields = Array.from(popupNewPlace.querySelectorAll(".popup__input"));
+const cardSaveButton = popupNewPlace.querySelector(".popup__save-button");
+
+// Константы попапа - картинка во весь экран
+
+const popupImg = document.querySelector(".popup-img");
+const popupFullPic = popupImg.querySelector(".popup-img__image");
+const popupFigcaption = popupImg.querySelector(".popup-img__figcaption");
 
 // Функция открытия всех попапов
 
@@ -28,15 +44,6 @@ function closePopup(item) {
 
 const popupCloseButtons = document.querySelectorAll(".popup__close-button");
 
-//закрытие попапа через поиск и нажатие ближайшей кнопки X
-
-popupCloseButtons.forEach((xbutton) =>
-  xbutton.addEventListener("click", () => {
-    const popupXButton = xbutton.closest(".popup");
-    closePopup(popupXButton);
-  })
-);
-
 // Закрытие попапа нажатием на Escape
 
 function closePopupEscapeButton(evt) {
@@ -48,9 +55,9 @@ function closePopupEscapeButton(evt) {
 
 // Закрытие попапа нажатием на background
 
-const popupBackground = document.querySelectorAll(".popup");
+const popupBackgrounds = document.querySelectorAll(".popup");
 
-popupBackground.forEach((popup) => {
+popupBackgrounds.forEach((popup) => {
   popup.addEventListener("mousedown", (evt) => {
     if (evt.target.classList.contains("popup_opened")) {
       closePopup(popup);
@@ -84,20 +91,9 @@ popupProfileFormElement.addEventListener("submit", submitPopupProfileForm);
 
 // Второй попап - места
 
-const popupNewPlace = document.querySelector(".popup-new-place");
-const newPlaceButton = document.querySelector(".profile__add-button");
-const popupNewPlaceForm = document.querySelector(".popup-new-place__form");
-const popupPlaceNameInput = document.querySelector(".popup__input_type_place");
-const popupPlaceLinkInput = document.querySelector(".popup__input_type_link");
-
-const inputFields = Array.from(popupNewPlace.querySelectorAll(".popup__input"));
-const popupSaveButton = popupNewPlace.querySelector(".popup__save-button");
-
 function openNewPlacePopup(event) {
   openPopup(popupNewPlace);
   popupNewPlaceForm.reset();
-
-  toggleButtonState(inputFields, popupSaveButton, validationConfig);
 }
 
 function addNewElement(evt) {
