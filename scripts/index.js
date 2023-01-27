@@ -1,3 +1,58 @@
+import { Card } from "./Card.js";
+import { openPopup } from "./Utils.js";
+import { validationConfig, FormValidator } from "./FormValidator.js";
+
+const initialCards = [
+  {
+    name: "Архыз",
+    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg",
+  },
+  {
+    name: "Челябинская область",
+    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg",
+  },
+  {
+    name: "Иваново",
+    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg",
+  },
+  {
+    name: "Камчатка",
+    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg",
+  },
+  {
+    name: "Холмогорский район",
+    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg",
+  },
+  {
+    name: "Байкал",
+    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
+  },
+];
+
+// Добавляем начальные карточки
+
+const elementContainer = document.querySelector(".elements__grid"); //ul куда записываем li элементы
+
+// Добавление элемента
+const addElement = (item) => {
+  elementContainer.prepend(item);
+};
+
+// Создание элемента
+
+function createElement(data) {
+  // Создадим экземпляр карточки
+  const card = new Card(data, "#elements-list");
+  // Создаём карточку и возвращаем наружу
+  const cardElement = card.generateCard();
+  addElement(cardElement);
+}
+
+// Cоздаем элементы из начального массива карточек
+initialCards.forEach((item) => {
+  createElement(item);
+});
+
 // Константы попапа профиля
 
 const popupProfileOpenButton = document.querySelector(".profile__edit-button");
@@ -23,19 +78,6 @@ const popupPlaceLinkInput = document.querySelector(".popup__input_type_link");
 const inputFields = Array.from(popupNewPlace.querySelectorAll(".popup__input"));
 const cardSaveButton = popupNewPlace.querySelector(".popup__save-button");
 
-// Константы попапа - картинка во весь экран
-
-const popupImg = document.querySelector(".popup-img");
-const popupFullPic = popupImg.querySelector(".popup-img__image");
-const popupFigcaption = popupImg.querySelector(".popup-img__figcaption");
-
-// Функция открытия всех попапов
-
-function openPopup(item) {
-  item.classList.add("popup_opened"); //добавляем переданному попапу класс popup_opened
-  document.addEventListener("keydown", closePopupEscapeButton);
-}
-
 // Функция закрытия всех попапов
 function closePopup(item) {
   item.classList.remove("popup_opened");
@@ -46,7 +88,8 @@ const popupCloseButtons = document.querySelectorAll(".popup__close-button");
 
 // Закрытие попапа нажатием на Escape
 
-function closePopupEscapeButton(evt) {
+export function closePopupEscapeButton(evt) {
+  // в дальнейшем импортируем в utils.js
   if (evt.key === "Escape") {
     const popupOpened = document.querySelector(".popup_opened");
     closePopup(popupOpened);
@@ -102,9 +145,25 @@ function addNewElement(evt) {
   const elLink = popupPlaceLinkInput.value;
   const elName = popupPlaceNameInput.value;
 
-  addElement(createElement(elLink, elName));
+  createElement({ link: elLink, name: elName });
   closePopup(popupNewPlace);
 }
 
 newPlaceButton.addEventListener("click", openNewPlacePopup);
 popupNewPlaceForm.addEventListener("submit", addNewElement);
+
+// Валидация первого попапа (профиль)
+
+const popupProfileValidation = new FormValidator(
+  validationConfig,
+  popupProfile
+);
+popupProfileValidation.enableValidation();
+
+// Валидация второго попапа (новое место)
+
+const popupNewPlaceValidation = new FormValidator(
+  validationConfig,
+  popupNewPlace
+);
+popupNewPlaceValidation.enableValidation();
