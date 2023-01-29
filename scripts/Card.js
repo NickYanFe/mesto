@@ -24,7 +24,6 @@ export class Card {
     popupFullPic.src = this._link;
     popupFullPic.alt = this._alt;
     popupFigcaption.textContent = this._name;
-    popupImg.classList.add("popup_opened");
   }
 
   // Функция удаления карточки
@@ -48,9 +47,12 @@ export class Card {
     this._setEventListeners(); // Активируем слушатели на карточке
 
     // Добавляем данные
-    this._element.querySelector(".element__image").src = this._link;
+    const elementImage = this._element.querySelector(".element__image");
+
+    elementImage.src = this._link;
+    elementImage.alt = this._alt;
+
     this._element.querySelector(".element__title").textContent = this._name;
-    this._element.querySelector(".element__image").alt = this._alt;
 
     // Возвращаем готовую карточку
     return this._element;

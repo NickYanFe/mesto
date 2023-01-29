@@ -1,33 +1,7 @@
 import { Card } from "./Card.js";
-import { openPopup } from "./Utils.js";
+import { openPopup, closePopup } from "./Utils.js";
 import { validationConfig, FormValidator } from "./FormValidator.js";
-
-const initialCards = [
-  {
-    name: "Архыз",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg",
-  },
-  {
-    name: "Челябинская область",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg",
-  },
-  {
-    name: "Иваново",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg",
-  },
-  {
-    name: "Камчатка",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg",
-  },
-  {
-    name: "Холмогорский район",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg",
-  },
-  {
-    name: "Байкал",
-    link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",
-  },
-];
+import { initialCards } from "./InitialCards.js";
 
 // Добавляем начальные карточки
 
@@ -75,26 +49,8 @@ const newPlaceButton = document.querySelector(".profile__add-button");
 const popupNewPlaceForm = document.forms["place-form"]; // Находим по "name" среди форм, а не по всему документу
 const popupPlaceNameInput = document.querySelector(".popup__input_type_place");
 const popupPlaceLinkInput = document.querySelector(".popup__input_type_link");
-const inputFields = Array.from(popupNewPlace.querySelectorAll(".popup__input"));
-const cardSaveButton = popupNewPlace.querySelector(".popup__save-button");
-
-// Функция закрытия всех попапов
-function closePopup(item) {
-  item.classList.remove("popup_opened");
-  document.removeEventListener("keydown", closePopupEscapeButton);
-}
-
-const popupCloseButtons = document.querySelectorAll(".popup__close-button");
-
-// Закрытие попапа нажатием на Escape
-
-export function closePopupEscapeButton(evt) {
-  // в дальнейшем импортируем в utils.js
-  if (evt.key === "Escape") {
-    const popupOpened = document.querySelector(".popup_opened");
-    closePopup(popupOpened);
-  }
-}
+// const inputFields = Array.from(popupNewPlace.querySelectorAll(".popup__input"));
+// const cardSaveButton = popupNewPlace.querySelector(".popup__save-button");
 
 // Закрытие попапа нажатием на background
 

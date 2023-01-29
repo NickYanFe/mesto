@@ -69,12 +69,10 @@ export class FormValidator {
   _toggleButtonState() {
     if (this._hasInvalidInput()) {
       // неактивная кнопка
-      this._buttonElement.classList.remove(this._submitButtonSelector);
       this._buttonElement.classList.add(this._inactiveButtonClass);
       this._buttonElement.disabled = true;
     } else {
       // активная кнопка
-      this._buttonElement.classList.add(this._submitButtonSelector);
       this._buttonElement.classList.remove(this._inactiveButtonClass);
       this._buttonElement.disabled = false;
     }

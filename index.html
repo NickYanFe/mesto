@@ -6,10 +6,7 @@
     <meta name="description" content="Практическая работа #4" />
     <meta name="author" content="Николай Титков" />
     <link rel="stylesheet" href="./pages/index.css" />
-    <script type="module" src="./scripts/formValidator.js" defer></script>
-    <!-- <script type="module" src="./scripts/card2.js" defer></script>  -->
     <script type="module" src="./scripts/index.js" defer></script>
-    <!-- <script type="module" src="./scripts/popups.js" defer></script> -->
     <title>Mesto. Russia</title>
   </head>
   <body class="page">
@@ -169,9 +166,11 @@
 
     <template id="elements-list">
       <li class="element">
+        <div class="element__image-wrapper">
         <button type="button" class="popup__fp-button" aria-label="Открыть">
           <img class="element__image" src="#" alt=" " />
         </button>
+        </div>
         <button
           type="button"
           class="element__delete-button"
