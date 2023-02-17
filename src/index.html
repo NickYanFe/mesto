@@ -3,17 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Практическая работа #4" />
+    <meta name="description" content="Практическая работа #8" />
     <meta name="author" content="Николай Титков" />
-    <link rel="stylesheet" href="./pages/index.css" />
-    <script type="module" src="./scripts/index.js" defer></script>
+    <!-- <link rel="stylesheet" href="./pages/index.css" /> -->
+    <!-- <script type="module" src="./pages/index.js" defer></script> -->
     <title>Mesto. Russia</title>
   </head>
   <body class="page">
     <div class="page__container">
       <header class="header">
         <img
-          src="./images/logo.svg"
+          src="<%=require('./images/logo.svg')%>"
           alt=" Место. Россия."
           class="header__logo"
         />
@@ -22,7 +22,7 @@
         <section class="profile">
           <div class="profile__header">
             <img
-              src="./images/kusto.jpg"
+              src="<%=require(`./images/kusto.jpg`)%>"
               alt=" Аватар пользователя."
               class="profile__logo"
             />
@@ -167,9 +167,9 @@
     <template id="elements-list">
       <li class="element">
         <div class="element__image-wrapper">
-        <button type="button" class="popup__fp-button" aria-label="Открыть">
-          <img class="element__image" src="#" alt=" " />
-        </button>
+          <button type="button" class="popup__fp-button" aria-label="Открыть">
+            <img class="element__image" src="#" alt=" " />
+          </button>
         </div>
         <button
           type="button"

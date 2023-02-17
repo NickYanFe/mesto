@@ -1,29 +1,9 @@
-// Импортируем функцию открытия попапа
-
-import { openPopup } from "./Utils.js";
-
-// создаем и сразу экспортируем класс Card
-
 export class Card {
-  constructor(data, template) {
+  constructor(data, template, handleCardClick) {
     this._name = data.name;
     this._link = data.link;
     this._template = template;
-  }
-
-  // Функция открытия попапа "Картинка во весь экран"
-
-  _handleOpenPopup() {
-    // Константы попапа - картинка во весь экран
-    const popupImg = document.querySelector(".popup-img");
-    const popupFullPic = popupImg.querySelector(".popup-img__image");
-    const popupFigcaption = popupImg.querySelector(".popup-img__figcaption");
-
-    openPopup(popupImg);
-
-    popupFullPic.src = this._link;
-    popupFullPic.alt = this._alt;
-    popupFigcaption.textContent = this._name;
+    this._handleCardClick = handleCardClick;
   }
 
   // Функция удаления карточки
@@ -47,10 +27,10 @@ export class Card {
     this._setEventListeners(); // Активируем слушатели на карточке
 
     // Добавляем данные
-    const elementImage = this._element.querySelector(".element__image");
+    this._elementImage = this._element.querySelector(".element__image");
 
-    elementImage.src = this._link;
-    elementImage.alt = this._alt;
+    this._elementImage.src = this._link;
+    this._elementImage.alt = this._name;
 
     this._element.querySelector(".element__title").textContent = this._name;
 
@@ -79,7 +59,7 @@ export class Card {
     this._element
       .querySelector(".popup__fp-button")
       .addEventListener("click", () => {
-        this._handleOpenPopup(); // обработчик открытия попапа на весь экран
+        this._handleCardClick(); // обработчик открытия попапа на весь экран функции HandleCardClick
       });
 
     // Удаление карточки
