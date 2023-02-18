@@ -3,7 +3,10 @@ import { PopupWithForm } from "../components/PopupWithForm.js";
 import { PopupWithImage } from "../components/PopupWithImage.js";
 import { Section } from "../components/Section.js";
 import { UserInfo } from "../components/UserInfo.js";
-import { validationConfig, FormValidator } from "../components/FormValidator.js";
+import {
+  validationConfig,
+  FormValidator,
+} from "../components/FormValidator.js";
 import { initialCards } from "../utils/InitialCards.js";
 import "./index.css"; // импортируем CSS файлы перед сп=боркой вебпаком
 
@@ -34,9 +37,6 @@ const popupWithImage = new PopupWithImage(popupImg);
 
 function handleCardClick(link, name) {
   popupWithImage.open(link, name);
-  popupFullPic.src = this._link;
-  popupFullPic.alt = this._alt;
-  popupFigcaption.textContent = this._name;
 }
 
 popupWithImage.setEventListeners();
@@ -65,12 +65,8 @@ const popupPlaceLinkInput = document.querySelector(".popup__input_type_link");
 
 // Новый класс popupWithForm для добавления нового элемента (карточки)
 const popupAddNewCard = new PopupWithForm(popupNewPlace, {
-  handleFormSubmit: (data) => {
-    const newElement = createElement(data, {
-      name: popupPlaceNameInput,
-      link: popupPlaceLinkInput,
-    });
-    elementsList.addItem(newElement);
+  handleFormSubmit: (item) => {
+    elementsList.addItem(createElement(item));
   },
 });
 
@@ -117,7 +113,6 @@ popupProfileOpenButton.addEventListener("click", () => {
 
 newPlaceButton.addEventListener("click", function () {
   popupAddNewCard.open();
-  popupNewPlaceForm.reset();
 });
 
 // Валидация первого попапа (профиль)

@@ -24,7 +24,6 @@ export class Card {
     // Запишем разметку в приватное поле _element.
     // Так у других элементов появится доступ к ней.
     this._element = this._getTemplate();
-    this._setEventListeners(); // Активируем слушатели на карточке
 
     // Добавляем данные
     this._elementImage = this._element.querySelector(".element__image");
@@ -34,39 +33,45 @@ export class Card {
 
     this._element.querySelector(".element__title").textContent = this._name;
 
+    // Кнопка лайк
+    this._likeButton = this._element.querySelector(".element__like-button");
+
+    // Кнопка удаления карточки
+    this._cardDeleteButton = this._element.querySelector(
+      ".element__delete-button"
+    );
+
+    // Кнопка открытия попапа картинки на весь экран
+    this._fullPicturePopupButton =
+      this._element.querySelector(".popup__fp-button");
+
+    this._setEventListeners(); // Активируем слушатели на карточке
+
     // Возвращаем готовую карточку
     return this._element;
   }
 
-  // Кнопка лайк
-  _likeButtonClick() {
-    this._element
-      .querySelector(".element__like-button")
-      .classList.toggle("element__like-button_active");
+  // Работа Кнопки лайк
+  _toggleLike() {
+    this._likeButton.classList.toggle("element__like-button_active");
   }
 
   // Слушатели
 
   _setEventListeners() {
-    // Кнопка лайк
-    this._element
-      .querySelector(".element__like-button")
-      .addEventListener("click", () => {
-        this._likeButtonClick();
-      });
+    // Переключение "лайка" по клику
+    this._likeButton.addEventListener("click", () => {
+      this._toggleLike();
+    });
 
     // Открытие попапа картинки на весь экран
-    this._element
-      .querySelector(".popup__fp-button")
-      .addEventListener("click", () => {
-        this._handleCardClick(); // обработчик открытия попапа на весь экран функции HandleCardClick
-      });
+    this._fullPicturePopupButton.addEventListener("click", () => {
+      this._handleCardClick(this._link, this._name); // обработчик открытия попапа на весь экран функции HandleCardClick
+    });
 
     // Удаление карточки
-    this._element
-      .querySelector(".element__delete-button")
-      .addEventListener("click", () => {
-        this._handleRemoveCard();
-      });
+    this._cardDeleteButton.addEventListener("click", () => {
+      this._handleRemoveCard();
+    });
   }
 }

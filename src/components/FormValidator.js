@@ -88,6 +88,9 @@ export class FormValidator {
       // `setTimeout` нужен для того, чтобы дождаться очищения формы (вызов уйдет в конце стэка) и только потом вызвать `toggleButtonState`
       setTimeout(() => {
         this._toggleButtonState();
+        this._inputList.forEach((inputElement) => {
+          this._hideInputError(inputElement); // очищаем ошибки
+        });
       }, 0); // достаточно указать 0 миллисекунд, чтобы после `reset` уже сработало действие
     });
 
