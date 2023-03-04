@@ -11,7 +11,7 @@
 .profile__logo-edit-button:hover {
   /* opacity: 0.6; */
   background-image: url(../../../images/avatar_edit.svg);
-   background-color: rgba(0, 0, 0, 0); 
+  background-color: rgba(0, 0, 0, 0);
   background-position: center;
   background-size: 26px 26px;
   background-repeat: no-repeat;
