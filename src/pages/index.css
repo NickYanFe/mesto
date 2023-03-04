@@ -52,3 +52,11 @@
 @import url(../blocks/popup/__input-error/_visible/popup__input-error_visible.css);
 @import url(../blocks/popup/__input/_type/popup__input-type_error.css);
 @import url(../blocks/element/__image-wrapper/element__image-wrapper.css);
+
+@import url(../blocks/popup-delete-card/popup-delete-card.css);
+@import url(../blocks/element/__like/element__like.css);
+@import url(../blocks/element/__like-counter/element__like-counter.css);
+@import url(../blocks/profile/__logo-edit-button/profile__logo-edit-button.css);
+@import url(../blocks/popup-avatar/popup-avatar.css);
+@import url(../blocks/popup-avatar/__link-input/popup-avatar__link-input.css);
+

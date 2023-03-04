@@ -7,3 +7,8 @@
   display: block;
   box-sizing: border-box;
 }
+
+.profile__logo:hover {
+  opacity: 0.2;
+}
+

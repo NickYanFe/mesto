@@ -21,11 +21,13 @@
       <main class="content">
         <section class="profile">
           <div class="profile__header">
-            <img
-              src="<%=require(`./images/kusto.jpg`)%>"
-              alt=" Аватар пользователя."
-              class="profile__logo"
-            />
+            <button class="profile__logo-edit-button">
+              <img
+                src="<%=require(`./images/kusto.jpg`)%>"
+                alt=" Аватар пользователя."
+                class="profile__logo"
+              />
+            </button>
 
             <div class="profile__edit" aria-label="закрыть">
               <div class="profile__info">
@@ -76,8 +78,8 @@
             />
             <span class="name-error popup__input-error"></span>
             <input
-              name="hobby"
-              id="hobby"
+              name="about"
+              id="about"
               type="text"
               class="popup__input popup__input_type_job"
               placeholder="Профессия"
@@ -85,7 +87,7 @@
               minlength="2"
               maxlength="200"
             />
-            <span class="hobby-error popup__input-error"></span>
+            <span class="about-error popup__input-error"></span>
             <button
               name="submit__button"
               type="submit"
@@ -98,7 +100,7 @@
         </div>
       </div>
 
-      <!-- Попап добавления нового элемента -->
+      <!-- Попап добавления нового элемента  -->
 
       <div class="popup popup-new-place">
         <div class="popup__container">
@@ -162,6 +164,65 @@
       </div>
     </div>
 
+    <!-- Попап подтверждения удаления карточки -->
+
+    <div class="popup popup-delete-card">
+      <div class="popup__container">
+        <button
+          type="button"
+          class="popup__close-button"
+          aria-label="закрыть"
+        ></button>
+        <h2 class="popup__header">Вы уверены?</h2>
+        <form class="popup__form popup-delete__form" name="delete-form">
+          <button
+            name="submit__button"
+            type="submit"
+            class="popup__save-button popup-delete-button"
+            aria-label="Да"
+          >
+            Да
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Попап редактирования Аватара -->
+
+    <div class="popup popup-avatar">
+      <div class="popup__container">
+        <button
+          type="button"
+          class="popup__close-button"
+          aria-label="закрыть"
+        ></button>
+        <h2 class="popup__header">Обновить аватар</h2>
+        <form
+          class="popup__form popup-avatar__form"
+          name="avatar-form"
+          novalidate
+        >
+          <input
+            name="avatar"
+            id="link"
+            type="url"
+            class="popup__input popup-avatar__link-input"
+            placeholder="Ссылка на аватар"
+            required
+          />
+          <span class="link-error popup__input-error"></span>
+          <button
+            name="submit__button"
+            type="submit"
+            class="popup__save-button popup-avatar__update"
+            aria-label="Создать"
+          >
+            Сохранить
+          </button>
+        </form>
+      </div>
+    </div>
+
     <!-- Темплейт -->
 
     <template id="elements-list">
@@ -178,11 +239,14 @@
         ></button>
         <div class="element__description">
           <h2 class="element__title"></h2>
-          <button
-            type="button"
-            class="element__like-button"
-            aria-label="Лайк"
-          ></button>
+          <div class="element__like">
+            <button
+              type="button"
+              class="element__like-button"
+              aria-label="Лайк"
+            ></button>
+            <h2 class="element__like-counter">0</h2>
+          </div>
         </div>
       </li>
     </template>
