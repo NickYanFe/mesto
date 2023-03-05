@@ -154,7 +154,7 @@ function handleLikeClick(card) {
     api
       .handleLikeRemove(card._id)
       .then((res) => {
-        card.getLikes(res.likes);
+        card.postLikes(res.likes);
         card.toggleIsLike();
         card.toggleLike();
       })
@@ -165,7 +165,7 @@ function handleLikeClick(card) {
     api
       .handleLikeAdd(card._id)
       .then((res) => {
-        card.getLikes(res.likes);
+        card.postLikes(res.likes);
         card.toggleIsLike();
         card.toggleLike();
       })

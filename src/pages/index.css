@@ -27,36 +27,21 @@
 @import url(../blocks/popup/popup.css);
 @import url(../blocks/popup/__save-button/popup__save-button.css);
 @import url(../blocks/popup/__close-button/popup__close-button.css);
-@import url(../blocks/popup/__form/popup__form.css);
 @import url(../blocks/popup/__fp-button/popup__fp-button.css);
-@import url(../blocks/popup/__full-picture/_close-button/popup__full-picture_close-button.css);
 @import url(../blocks/popup/__input/popup__input.css);
-@import url(../blocks/popup/__input/_type/popup__input_type_job.css);
-@import url(../blocks/popup/__input/_type/popup__input_type_name.css);
-@import url(../blocks/popup/__input/_type/popup__input-type-place.css);
-@import url(../blocks/popup/__input/_type/popup__input_type_link.css);
 @import url(../blocks/popup/__header/popup__header.css);
-@import url(../blocks/popup-profile/popup-profile.css);
 @import url(../blocks/popup/_opened/popup_opened.css);
 @import url(../blocks/popup/__container/popup__container.css);
-@import url(../blocks/popup-new-place/popup-new-place.css);
-@import url(../blocks/popup-new-place/__form/popup-new-place__form.css);
-@import url(../blocks/popup-new-place/_opened/popup-new-place_opened.css);
-@import url(../blocks/popup-img/popup-img.css);
 @import url(../blocks/popup-img/__container/popup-img__container.css);
 @import url(../blocks/popup-img/__figcaption/popup-img__figcaption.css);
 @import url(../blocks/popup-img/__image/popup-img__image.css);
-@import url(../blocks/popup-img/__close-button/popup-img__close-button.css);
 @import url(../blocks/popup/__input-error/popup__input-error.css);
 @import url(../blocks/popup/__save-button/_disabled/popup__save-button_disabled.css);
 @import url(../blocks/popup/__input-error/_visible/popup__input-error_visible.css);
-@import url(../blocks/popup/__input/_type/popup__input-type_error.css);
 @import url(../blocks/element/__image-wrapper/element__image-wrapper.css);
 
-@import url(../blocks/popup-delete-card/popup-delete-card.css);
 @import url(../blocks/element/__like/element__like.css);
 @import url(../blocks/element/__like-counter/element__like-counter.css);
 @import url(../blocks/profile/__logo-edit-button/profile__logo-edit-button.css);
-@import url(../blocks/popup-avatar/popup-avatar.css);
-@import url(../blocks/popup-avatar/__link-input/popup-avatar__link-input.css);
+@import url(../blocks/popup/__input_avatar_link/popup__input-avatar-link.css);
 

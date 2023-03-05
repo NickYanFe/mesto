@@ -81,7 +81,7 @@ export class Card {
   }
 
   // Получение количества лайков в счетчик лайков
-  getLikes(likes) {
+  postLikes(likes) {
     this._likes = likes;
     this._likesCounter.textContent = this._likes.length;
   }
