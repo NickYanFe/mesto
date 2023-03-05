@@ -34,7 +34,7 @@ Promise.all([api.getUserInfo(), api.handleGetCards()]).then((responses) => {
 
   userInfo.setUserInfo(userData);
   userInfo.setUserInfoAvatar(userData);
-  userInfo.getUserId(userData._id);
+  // userInfo.getUserId(userData._id);
 
   userId = userData._id;
   elementsList.renderItems(cardList);
@@ -303,5 +303,3 @@ popupAvatarValidation.enableValidation();
 popupAvatarOpenButton.addEventListener("click", () => {
   popupUpdateAvatar.open();
 });
-
-

@@ -80,7 +80,7 @@ export class Card {
     return this._isLike;
   }
 
-  // Получение и присвоение количества лайков счетчику лайков
+  // Получение количества лайков в счетчик лайков
   getLikes(likes) {
     this._likes = likes;
     this._likesCounter.textContent = this._likes.length;
@@ -99,6 +99,7 @@ export class Card {
   // Удаление карточки
   handleDeleteElement() {
     this._element.remove();
+    this._element = null;
   }
 
   // Слушатели
